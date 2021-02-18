@@ -34,6 +34,8 @@ const SignUp: React.FC = () => {
       const errors = getValidationErrors(err);
 
       formRef.current?.setErrors(errors);
+
+      console.log(errors);
     }
   }, []);
 
@@ -43,7 +45,7 @@ const SignUp: React.FC = () => {
       <Content>
         <img src={logoImg} alt="GoBarber" />
 
-        <Form ref={useRef} onSubmit={handleSubmit}>
+        <Form ref={formRef} onSubmit={handleSubmit}>
           <h1>Faça seu cadastro</h1>
           <Input name="name" icon={FiUser} placeholder="Nome" />
           <Input name="email" icon={FiMail} placeholder="E-mail" />
